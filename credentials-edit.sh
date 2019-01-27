@@ -10,7 +10,15 @@ file=$2
 tmpfile=`mktemp`
 
 function usage() {
-    echo 'Usage: credentials-edit.sh [create|edit] FILE'
+    echo 'credentials-edit 0.0.1'
+    echo 'copyright @acro5piano'
+    echo ''
+    echo 'Usage: credentials-edit.sh COMMAND FILE'
+    echo ''
+    echo 'Available commands:'
+    echo '    create - create encrypted file from non-encrypted file'
+    echo '    edit - decrypt file, edit, then encrypt again'
+
     exit 1
 }
 
@@ -46,5 +54,5 @@ fi
 case $1 in
     'create') create;;
     'edit') edit;;
-    '*') usage;
+    '*') usage > 1&2;
 esac
