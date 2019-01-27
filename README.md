@@ -23,4 +23,5 @@ Available commands:
 
     create - create encrypted file from non-encrypted file
     edit - decrypt file, edit, then encrypt again
+    print - decrypt file and print the content
 ```
