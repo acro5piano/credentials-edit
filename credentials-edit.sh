@@ -18,6 +18,7 @@ function usage() {
     echo 'Available commands:'
     echo '    create - create encrypted file from non-encrypted file'
     echo '    edit - decrypt file, edit, then encrypt again'
+    echo '    print - decrypt file and print the content'
 
     exit 1
 }
@@ -34,6 +35,12 @@ function edit() {
     openssl aes-256-cbc -a -d -k $master_key -in $file -out $tmpfile
     $editor $tmpfile
     openssl aes-256-cbc -a -e -k $master_key -in $tmpfile -out $file
+}
+
+function print() {
+    openssl aes-256-cbc -a -d -k $master_key -in $file -out /dev/stdout
+    # $editor $tmpfile
+    # openssl aes-256-cbc -a -e -k $master_key -in $tmpfile -out $file
 }
 
 
@@ -54,5 +61,6 @@ fi
 case $1 in
     'create') create;;
     'edit') edit;;
+    'print') print;;
     '*') usage > 1&2;
 esac
