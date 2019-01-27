@@ -39,8 +39,6 @@ function edit() {
 
 function print() {
     openssl aes-256-cbc -a -d -k $master_key -in $file -out /dev/stdout
-    # $editor $tmpfile
-    # openssl aes-256-cbc -a -e -k $master_key -in $tmpfile -out $file
 }
 
 
@@ -54,7 +52,7 @@ if [ -z "$file" ]; then
 fi
 
 if [ ! -e $master_key_path ] && [ -z "$master_key" ]; then
-    echo 'Error: Master key not found. please create `.mater_key` or set $MASTER_KEY environemt variable.'
+    echo Error: Master key not found. please create $master_key_path or set $MASTER_KEY environemt variable.
     exit 2
 fi
 
