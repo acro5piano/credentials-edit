@@ -51,9 +51,12 @@ if [ -z "$file" ]; then
     usage
 fi
 
-if [ ! -e $master_key_path ] && [ -z "$master_key" ]; then
-    echo Error: Master key not found. please create $master_key_path or set $MASTER_KEY environemt variable.
-    exit 2
+if [ -z "$master_key" ]; then
+    if [ ! -e $master_key_path ]; then
+        echo Error: Master key not found. please create $master_key_path or set $MASTER_KEY environemt variable.
+        exit 2
+    fi
+    master_key=`cat master_key`
 fi
 
 case $1 in
