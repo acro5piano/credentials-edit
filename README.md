@@ -2,6 +2,11 @@
 
 credential editor like rails `credentials:edit`
 
+# Features
+
+- Only depends on Openssl
+- No need to install tools in almost all environments
+
 # Install
 
 ```
