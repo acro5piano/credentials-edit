@@ -47,7 +47,7 @@ if [ -z "$command" ]; then
 fi
 
 if [ -z "$file" ]; then
-    echo 'Error: No file specified.' > 1&2
+    echo 'Error: No file specified.' 1>&2
     usage
 fi
 
@@ -60,5 +60,5 @@ case $1 in
     'create') create;;
     'edit') edit;;
     'print') print;;
-    '*') usage > 1&2;
+    '*') usage 1>&2;
 esac
