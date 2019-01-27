@@ -13,7 +13,7 @@ function usage() {
     echo 'credentials-edit 0.0.1'
     echo 'copyright @acro5piano'
     echo ''
-    echo 'Usage: credentials-edit.sh COMMAND FILE'
+    echo 'Usage: credentials-edit COMMAND FILE'
     echo ''
     echo 'Available commands:'
     echo '    create - create encrypted file from non-encrypted file'

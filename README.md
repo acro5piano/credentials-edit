@@ -11,7 +11,7 @@ curl -L https://raw.githubusercontent.com/acro5piano/credentials-edit/master/cre
 # Usage
 
 ```
-Usage: credentials-edit.sh COMMAND FILE
+Usage: credentials-edit COMMAND FILE
 
 Available commands:
 
